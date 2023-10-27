@@ -31,6 +31,10 @@ class AllController extends Controller
         return view('index');
     }
 
+    public function terifler() {
+        return view('terifler');
+        
+    }
 
 
 

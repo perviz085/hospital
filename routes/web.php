@@ -14,11 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['middleware'=>'notlogin'], function (){
-    Route::get('/index_on','App\Http\Controllers\AllController@index_on')->name('index');
+   
 });
 
 
 Route::group(['middleware'=>'islogin'], function (){
     Route::get('/','App\Http\Controllers\AllController@login')->name('login');
     Route::post('/login','App\Http\Controllers\AllController@login_on')->name('login_on');
+    
+    //Altdakilar ustdeki qruba kecmelidir-------------
+    Route::get('/index_on','App\Http\Controllers\AllController@index_on')->name('index');
+    Route::get('/terifler','App\Http\Controllers\AllController@terifler')->name('terifler');
+    Route::get('/xesteler','App\Http\Controllers\AllController@xesteler')->name('xesteler');
+
 });
